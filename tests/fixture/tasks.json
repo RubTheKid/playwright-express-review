@@ -1,0 +1,28 @@
+{
+    "success": {
+        "name": "Teste playwright 5.0",
+        "is_done": false
+    },
+    "duplicate": {
+        "name": "Teste playwright 6.0 duplicate",
+        "is_done": false
+    },
+    "required": {
+        "name": "",
+        "is_done": false
+    },
+    "update": {
+        "name": "Tarefa atualizada",
+        "is_done": false
+    },
+    "toggle": {
+        "name": "Tarefa atualizada",
+        "is_done": true
+    },
+    "delete": {
+        "name": "Tarefa para deletar",
+        "is_done": false
+    }
+
+
+}

@@ -29,4 +29,24 @@ export class TasksPage {
     await expect(errorModal).toBeVisible();
     await expect(errorModal).toHaveText(text);
   }
+
+  async toggleTask(taskName: string) {
+    const target = this.page.locator(`xpath=//p[text()="${taskName}"]/..//button[contains(@class, "Toggle")]`);
+    await target.click();
+  }
+
+  async shouldBeDone(taskName: string) {
+    const target = this.page.getByText(taskName);
+    await expect(target).toHaveCSS("text-decoration-line", "line-through");
+  }
+
+  async removeTask(taskName: string) {
+    const target = this.page.locator(`xpath=//p[text()="${taskName}"]/..//button[contains(@class, "Delete")]`);
+    await target.click();
+  }
+
+  async shouldNotExistTask(taskName: string) {
+     const target = this.page.locator(`css=.task-item p >> text=${taskName}`);
+    await expect(target).not.toBeVisible();
+  }
 }
