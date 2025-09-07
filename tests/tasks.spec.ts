@@ -79,42 +79,12 @@ test("should create a new task, and should not create a task that exists", async
   await request.delete(`http://localhost:3333/helper/tasks/${taskName}`);
 }); 
 
-// test("should create a new task, and should not create a task that exists (with api call)", async ({
-//   page,
-//   request,
-// }) => {
-//   const task = {
-//     name: "New Task from Playwright 3.0",
-//     is_done: false,
-//   };
-
-//   await request.delete("http://localhost:3333/helper/tasks/" + task.name);
-
-//   const newTask = await request.post("http://localhost:3333/tasks", {
-//     data: task,
-//   });
-//   expect(newTask.ok()).toBeTruthy();
-//   expect(newTask.status()).toBe(201);
-
-//   await page.goto("http://localhost:8080");
-
-//   const inputTaskName = page.locator("#newTask");
-//   await inputTaskName.fill(task.name);
-//   await page.click("css=button >> text=Create");
-
-//   const errorModal = page.locator(".swal2-html-container");
-//   await expect(errorModal).toBeVisible();
-//   await expect(errorModal).toHaveText("Task already exists!");
-
-//   await request.delete(`http://localhost:3333/helper/tasks/${task.name}`);
-// });
-
 test("should create a new task, and should not create a task that exists (with api call)", async ({
   page,
   request,
 }) => {
-  const task : TaskModel = {
-    name: "New Task from Playwright 4.0",
+  const task = {
+    name: "New Task from Playwright 3.0",
     is_done: false,
   };
 
